@@ -108,6 +108,7 @@
         gotoLine             : true,
         codeFold             : false,
         autoHeight           : false,
+        previewPadding       : "20px",
 		autoFocus            : true,
         autoCloseTags        : true,
         searchReplace        : true,
@@ -334,10 +335,12 @@
     editormd.$marked      = null;
     editormd.$CodeMirror  = null;
     editormd.$prettyPrint = null;
+    editormd.contentPadding = "20px";
     
     var timer, flowchartTimer;
 
     editormd.prototype    = editormd.fn = {
+        
         state : {
             watching   : false,
             loaded     : false,
@@ -445,6 +448,7 @@
             this.htmlTextarea     = editor.children("." + classNames.textarea.html);            
             this.preview          = editor.children("." + classPrefix + "preview");
             this.previewContainer = this.preview.children("." + classPrefix + "preview-container");
+            this.contentPadding = settings.contentPadding
             
             if (settings.previewTheme !== "") 
             {
@@ -1771,7 +1775,7 @@
                 
                 if (settings.watch)
                 {
-                    _this.previewContainer.css("padding", settings.autoHeight ? "20px 20px 50px 40px" : "20px");
+                    _this.previewContainer.css("padding", settings.autoHeight ? "20px 20px 50px 40px" : _this.contentPadding);
                 }
                 
                 timer = setTimeout(function() {
@@ -1920,7 +1924,7 @@
                 codeMirror.width(editor.width() / 2);
                 preview.width((!state.preview) ? editor.width() / 2 : editor.width());
                 
-                this.previewContainer.css("padding", settings.autoHeight ? "20px 20px 50px 40px" : "20px");
+                this.previewContainer.css("padding", settings.autoHeight ? "20px 20px 50px 40px" : this.contentPadding);
                 
                 if (settings.toolbar && !settings.readOnly) 
                 {
@@ -2574,7 +2578,7 @@
                 
             if (settings.watch)
             {
-                previewContainer.css("padding", "20px");
+                previewContainer.css("padding", "0px"); // MODIFIED
             }
             
             preview.css({ 
