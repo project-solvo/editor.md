@@ -1506,7 +1506,7 @@
                 var tex  = $(this);
                 editormd.$katex.render(tex.text(), tex[0]);
                 
-                // tex.find(".katex").css("font-size", "1.6em");
+                tex.find(".katex").css("font-size", "1.0em");
             });   
 
             return this;
@@ -4018,9 +4018,9 @@
         {
             var katexHandle = function() {
                 div.find("." + editormd.classNames.tex).each(function(){
-                    var tex  = $(this);                    
-                    katex.render(tex.html().replace(/&lt;/g, "<").replace(/&gt;/g, ">"), tex[0]);                    
-                    // tex.find(".katex").css("font-size", "1.6em");
+                    var tex  = $(this);
+                    katex.render(tex.html().replace(/&lt;/g, "<").replace(/&gt;/g, ">"), tex[0]);
+                    tex.find(".katex").css("font-size", "1.0em");
                 });
             };
             
