@@ -1490,7 +1490,7 @@
                 var tex  = $(this);
                 editormd.$katex.render(tex.text(), tex[0]);
                 
-                tex.find(".katex").css("font-size", "1.6em");
+                // tex.find(".katex").css("font-size", "1.6em");
             });   
 
             return this;
