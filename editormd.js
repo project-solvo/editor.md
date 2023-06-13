@@ -64,24 +64,33 @@
     editormd.classPrefix  = "editormd-";
     
     editormd.toolbarModes = {
-        full : [
-            "undo", "redo", "|", 
-            "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|", 
-            "h1", "h2", "h3", "h4", "h5", "h6", "|", 
+        full: [
+            "undo", "redo", "|",
+            "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|",
+            "h1", "h2", "h3", "h4", "h5", "h6", "|",
             "list-ul", "list-ol", "hr", "|",
             "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime", "emoji", "html-entities", "pagebreak", "|",
             "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|",
             "help", "info"
         ],
-        simple : [
-            "undo", "redo", "|", 
-            "bold", "del", "italic", "quote", "uppercase", "lowercase", "|", 
-            "h1", "h2", "h3", "h4", "h5", "h6", "|", 
+        solvo: [
+            "undo", "redo", "|",
+            "bold", "del", "italic", "quote", "|",
+            "h1", "h2", "h3", "h4", "|",
+            "list-ul", "list-ol", "hr", "|",
+            "link", "image", "code", "code-block", "table", "|",
+            "watch", "|",
+            "help"
+        ],
+        simple: [
+            "undo", "redo", "|",
+            "bold", "del", "italic", "quote", "uppercase", "lowercase", "|",
+            "h1", "h2", "h3", "h4", "h5", "h6", "|",
             "list-ul", "list-ol", "hr", "|",
             "watch", "preview", "fullscreen", "|",
             "help", "info"
         ],
-        mini : [
+        mini: [
             "undo", "redo", "|",
             "watch", "preview", "|",
             "help", "info"
@@ -2605,6 +2614,7 @@
          */
         
         fullscreen : function() {
+            return this;
             
             var _this            = this;
             var state            = this.state;
@@ -3300,7 +3310,7 @@
         "Shift-Alt-P"      : "pagebreak",
         "F9"               : "watch",
         "F10"              : "preview",
-        "F11"              : "fullscreen",
+        // "F11"              : "fullscreen",
     };
     
     /**
